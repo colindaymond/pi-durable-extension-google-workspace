@@ -1,0 +1,65 @@
+{
+  "name": "pi-durable-extension-google-workspace",
+  "version": "0.1.0",
+  "description": "Google Workspace extension for Pi Durable (pi-durable): multi-account Gmail, Drive, Calendar, Docs, Sheets, Slides, Chat and People",
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colindaymond/pi-durable-extension-google-workspace.git"
+  },
+  "keywords": [
+    "pi-durable",
+    "pi-extension",
+    "google-workspace",
+    "gmail",
+    "google-drive",
+    "google-calendar"
+  ],
+  "files": [
+    "extensions",
+    "scripts",
+    "skills",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/index.ts"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "check": "npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "googleapis": "^171.0.0"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    },
+    "typebox": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "0.84.2",
+    "@types/node": "^22.18.0",
+    "tsx": "^4.20.5",
+    "typebox": "^1.0.0",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=22.19"
+  }
+}
